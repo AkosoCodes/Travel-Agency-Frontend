@@ -1,0 +1,168 @@
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  height:auto;
+  
+}
+
+.carousel{
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.carousel-item{
+  width: 400px;
+  margin: 15px;
+  transition: all 0.35s ease-in-out;
+
+  opacity: 0.95;
+  padding: 10px;
+  border-radius: 1%;
+
+}
+
+.carousel-item .image img:hover{
+  opacity: 0.75;
+
+}
+
+.image{
+  width: 395px;
+}
+
+.image img{
+  width: 100%;
+  height: 265px;
+  border-radius: 1%;
+  transition: all 0.35s ease-in-out;
+}
+
+.place-text{
+  font-family: Rubik;
+  text-align: left;
+  font-size: 25px; 
+  height: 150px;
+
+  background-color: #eff8fd;
+  padding: 6px 2px;
+  border-radius: 1%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+}
+
+.place-text .hold  {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.place-text .hold p{
+  padding: 5px;
+  margin: 0;
+  font-weight: normal;
+  color: #022027;
+}
+
+.place-text .hold .review{
+  font-weight: bold;
+  padding: 5px;
+  margin: 0;
+}
+
+.place-text .country{
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.place-text .description{
+  color: #022027;
+  font-size: 20px;
+  padding: 10px 5px;
+}
+
+.btn{
+  width:100%;
+  height:50px;
+
+  font-size: 20px;
+  BACKGROUND-COLOR: #097c9a;
+}
+
+.booking{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -220px;
+  margin-left: -300px;
+  display: flex;
+  flex-direction: column;
+
+  width: 600px;
+  height: auto;
+  background-color: #097c9a;
+  border: #022027 solid 5px;
+  box-shadow: #07566a -5px 5px;
+  z-index: 3;
+}
+
+.booking form{
+  background-color: #eff8fd;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  padding-bottom: 10px;
+}
+
+.form-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-title h1{
+  color: #097c9a;
+  font-size: 40px;
+  padding: 5px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.booking form mat-form-field{
+  margin: 5px 0;
+}
+
+#form-btn{
+  background-color: #097c9a;
+  color: white;
+  margin: 20px;
+  text-align: center;
+  font-size: 15px;
+
+}
+
+@media only screen and (max-width: 610px){
+  .booking{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -190px;
+    margin-left: -225px;
+    width: 450px;
+}
+}
+

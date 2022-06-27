@@ -1,0 +1,180 @@
+.wrapper{
+  border-top: #022027 solid 6px;
+  border-bottom: #022027 solid 6px;
+}
+
+
+.container, .container2{
+  background-color: #075e74;
+  color: #f6fbfe;
+  justify-content: center;
+
+}
+.container .section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: #FFFFFF;
+}
+
+.container .section-item{
+  text-align: center;
+  width: 200px;
+  margin: auto;
+}
+
+.section-content p{
+  width: 300px;
+}
+
+ul{
+  padding: 0 0 0 30px;
+  text-align: left;
+}
+ul li{
+  list-style-type: none;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #eff8fd;
+  font-size: 14px;
+  transition: all .2s ease-in-out;
+}
+
+ul li a:hover{
+  cursor: default;
+  opacity: 0.7;
+}
+
+h1{
+  margin: 0;
+  padding: 0 0 0 30px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+
+
+}
+
+h3{
+  text-align: center;
+  padding-top: 10px;
+  font-family: "Rubik";
+  
+}
+
+#copy{
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.title, #social-title{
+  padding-left: 0 !important;
+}
+
+#social{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin: 10px auto;
+
+}
+
+#social-title{
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+#instagram, #twitter, #linkedin, #github{
+  margin: 0 5px;
+  background-color: #f9fcfe;
+  border-radius: 10px;
+  box-shadow: #022027 3px 3px 1px;
+  width: 40px;
+
+  transition: all .2s ease-in-out;
+}
+#instagram{
+  margin: 0 5px 0 0;
+}
+
+#instagram:hover, #twitter:hover, #linkedin:hover, #github:hover{
+  scale: 1.05;
+}
+
+
+.newsletter{
+  width: 720px;
+  height: 180px;
+  background-color: #022027;
+}
+
+@media screen and (min-width: 950px){
+  .container {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  #about, .socials{
+    width: 300px;
+    height: 100%;
+    margin: 30px 50px 0px 20px;
+  }
+
+  .socials{
+    width: 300px;
+    margin: auto 0;
+  }
+}
+@media screen and (max-width: 950px){
+
+  #about, .socials{
+    margin: 30px 50px;
+  }
+
+  #about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #test .section-title{
+    width: 300px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .socials{
+    width: 300px;
+    margin: auto 0;
+  }
+}
+@media screen and (max-width: 600px){
+
+  #about{
+    flex-direction: column;
+    padding: 0 0 0 30px;
+    margin: 20px 0;
+  }
+  .socials{
+    width: 300px;
+    margin: auto 0;
+  }
+
+  .container .section{
+    display: flex;
+    flex-direction: column;
+  }
+  .container .section-item{
+    margin: 0 0;
+  }
+}
+
+

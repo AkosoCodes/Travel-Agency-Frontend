@@ -1,0 +1,94 @@
+<div class="header">
+
+  <!-- Filler for Side Navigation Bar -->
+  <div class="invisible-side-bar"></div>
+
+  <!-- Scroll to Top Button -->
+  <button mat-fab *ngIf="isShow" (click)="gotoTop()" id="scroll-to-top">
+    <mat-icon>expand_less</mat-icon>
+  </button>
+
+  <div class="side-bar">
+    <ul class="list">
+      <li>
+        <button class="list-item" (click)="openPanel(panels[1])">
+          <div class="wrapper">
+            <p class="title">Destinations</p>
+          </div>
+        </button>
+      </li>
+      <li>
+        <button class="list-item" (click)="openPanel(panels[2])">
+          <div class="wrapper">
+            <p class="title">Users</p>
+          </div>
+        </button>
+      </li>
+      <li>
+        <button class="list-item" (click)="openPanel(panels[3])">
+          <div class="wrapper">
+            <p class="title">Bookings</p>
+          </div>
+        </button>
+      </li>
+
+    </ul>
+
+    <div class="socials">
+
+      <div class="icon">
+        <a routerLink="/home"><img src="../../../assets/images/Icon.svg"></a>
+      </div>
+
+      <div class="section-title">
+        <h1 class="title">Andrija Stanković</h1>
+        <h1 class="title">2020-230164</h1>
+      </div>
+
+      <div id="social">
+
+        <div class="social-btn">
+          <a href="https://www.instagram.com/andrija_s21/" target="_blank">
+            <img src="assets/images/Icons/icons8-instagram-384.png" alt="Instagram" id="instagram">
+          </a>
+        </div>
+
+        <div class="social-btn">
+          <a href="https://twitter.com/AkosoCodes" target="_blank">
+            <img src="assets/images/Icons/icons8-twitter-384.png" alt="Twitter" id="twitter">
+          </a>
+        </div>
+
+        <div class="social-btn">
+          <a href="https://www.linkedin.com/in/andrijas21/" target="_blank">
+            <img src="assets/images/Icons/icons8-linkedin-384.png" alt="LinkedIn" id="linkedin">
+          </a>
+        </div>
+
+        <div class="social-btn">
+          <a href="https://github.com/AkosoCodes" target="_blank">
+            <img src="assets/images/Icons/icons8-github-384.png" alt="Github" id="github">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="content">
+
+   <div class="spline" *ngIf="checkDest(panels[0])">
+    <h1>Admin Panel</h1>
+    <iframe src='https://my.spline.design/windowscopy-fc7b3d850a305fbb5b44baccbbd1acb4/' frameborder='0' width='100%' height='100%' ></iframe>
+   </div>
+
+    <app-admin-dest *ngIf="checkDest(panels[1])"></app-admin-dest>
+
+    <app-admin-user *ngIf="checkDest(panels[2])"></app-admin-user>
+
+    <app-admin-booking *ngIf="checkDest(panels[3])"></app-admin-booking>
+
+  </div>
+
+
+</div>

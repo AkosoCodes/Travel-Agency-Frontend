@@ -1,0 +1,138 @@
+<div class="content">
+  <!--  USERS-->
+<div class="users">
+  <mat-tab-group mat-align-tabs="center" preserveContent>
+
+    <mat-tab label="CREATE">
+      <div class="create-dest">
+
+        <form [formGroup]="usersForm" (ngSubmit)="createUser()">
+
+            <div class="form-title">
+              <h1>Create a new User:</h1>
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastName">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input #input matInput formControlName="username" maxlength="20" minlength="5">
+            <mat-error>Must be between 5 and 20 characters</mat-error>
+            <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hidePass ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hidePass = !hidePass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePass">
+              <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>At least 8 characters.</mat-error>
+          </mat-form-field>
+
+          <button mat-button type="submit" id="form-btn">Submit</button>
+
+        </form>
+
+
+      </div>
+
+
+
+    </mat-tab>
+
+    <mat-tab label="EDIT">
+      <div class="show-dest">
+
+        <div class="action-btn">
+          <button mat-stroked-button (click)="openAll()">Expand All</button>
+          <button mat-stroked-button (click)="closeAll()">Close All</button>
+        </div>
+
+        <mat-accordion #myaccordion="matAccordion" multi="true">
+          <mat-expansion-panel class="dest" *ngFor="let user of users"
+            (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+            <mat-expansion-panel-header>
+              <p>@{{user.username}}</p>
+            </mat-expansion-panel-header>
+
+            <div class="dest-section">
+
+              <div class="dest-info" style="{{showInput}}">
+
+                <span>
+                  <strong>First Name:</strong>{{user.firstName}}
+                </span>
+
+                <span>
+                  <strong>Last Name:</strong>{{user.lastName}}
+                </span>
+
+                <span>
+                  <strong>Username:</strong>{{user.username}}
+                </span>
+
+                <span>
+                  <strong>ID:</strong>{{user._id}}
+                </span>
+
+              </div>
+
+
+              <div class="dest-edit" style="{{hideInput}}">
+
+                <form class="editForm" [formGroup]="editFormUser" (ngSubmit)="editUser(user._id)">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput value="{{user.firstName}}" formControlName="firstName">
+                    <mat-hint><strong><i>{{user.firstName}}</i></strong></mat-hint>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" >
+                    <mat-hint><strong><i>{{user.lastName}}</i></strong></mat-hint>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput value="{{user.username}}" formControlName="username">
+                    <mat-hint><strong><i>{{user.username}}</i></strong></mat-hint>
+                  </mat-form-field>
+
+
+                  <button mat-button (click)="editUser(user._id)" type="submit" style={{hideInput}}>SUBMIT</button>
+
+
+                </form>
+              </div>
+
+            </div>
+
+            <mat-action-row>
+              <button mat-button color="warn" (click)="deleteUser(user._id)">DELETE</button>
+              <button mat-button (click)="editEvent(true); " style="{{showInput}}">EDIT</button>
+              <button mat-button (click)="editEvent(false)" style={{hideInput}}>UNDO</button>
+            </mat-action-row>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+
+      </div>
+    </mat-tab>
+
+
+  </mat-tab-group>
+</div>
+</div>

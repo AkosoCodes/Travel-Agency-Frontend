@@ -1,0 +1,23 @@
+
+.container{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.chip-list{
+    width: 1000px;
+    height: 100px;
+
+    font-size: 35px;
+    margin-top: 20px;
+    margin: auto 20px;;
+}
+
+mat-chip{
+    
+    font-size: 20px;
+}
+
+.mat-chip-ripple{
+    background-color: blue;
+}

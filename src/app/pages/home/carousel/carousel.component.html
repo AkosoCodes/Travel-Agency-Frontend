@@ -1,0 +1,60 @@
+<app-chip (onSubmit)="filter($event)"></app-chip>
+
+<div class="container">
+  <div class="carousel">
+
+    <div class="carousel-item" *ngFor="let dest of filteredDestinations">
+      <div class="image">
+        <img src="{{dest.imageURL}}" alt="">
+      </div>
+
+      <div class="place-text">
+        <div class="hold">
+          <p>{{dest.city}}, <span class="country">{{dest.country}}</span></p>
+          <div class="review">{{dest.review}}</div>
+        </div>
+        <div class="description">{{dest.description}}</div>
+        <button class="btn" mat-stroked-button (click)="checkBooking(dest._id)"> BOOK NOW</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="booking" *ngIf="isBooking">
+
+    <form [formGroup]="BookingForm" (ngSubmit)="createBooking(bookUser)">
+  
+      <div class="form-title">
+        <h1>Create Booking:</h1>
+        <h1 style="cursor: pointer;"><a (click)="isBooking=false"><mat-icon>cancel</mat-icon></a></h1>
+      </div>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>User ID:</mat-label>
+        <input matInput formControlName="userID" [readonly] = "true">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Destination ID:</mat-label>
+        <input matInput formControlName="destID" [readonly] = "true">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="startDate">
+          <input matEndDate formControlName="endDate">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+  
+      </mat-form-field>
+  
+      <button mat-button type="submit" id="form-btn" [disabled]="BookingForm.invalid">Book Now</button>
+  
+    </form>
+  
+  </div>

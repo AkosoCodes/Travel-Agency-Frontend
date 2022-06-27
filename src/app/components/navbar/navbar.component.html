@@ -1,0 +1,114 @@
+<div class="container">
+
+  <div class="container-items">
+
+    <div id="logo">
+      <a href=""><img src="assets/images/Icon.svg"></a>
+    </div>
+    <div id="left">
+      <button mat-button routerLink="/home">Home</button>
+      <button mat-button routerLink="/discovery">Discovery</button>
+      <button mat-button routerLink="/support">Support</button>
+    </div>
+
+  </div>
+
+  <div id="right">
+    <button mat-button (click)="toggleLoginForm()" *ngIf="u==null">Login</button>
+    <button mat-button (click)="toggleRegisterForm()" *ngIf="u==null">Register</button>
+    <button mat-button *ngIf="u!=null" style="margin-right: 10px;">@{{u?.username}}</button>
+    <button mat-button (click)="logoutUser()" *ngIf="u!=null">Log Out</button>
+  </div>
+
+</div>
+
+<div id="sandwich">
+
+  
+  <label  for="toggle"><mat-icon>arrow_drop_down</mat-icon></label>
+  <input type="checkbox" id="toggle"/>
+  
+  <div id="menu">
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/discovery">Discovery</button>
+    <button mat-button routerLink="/support">Support</button>
+    <div>
+      <button mat-button (click)="toggleLoginForm()" *ngIf="u==null">Login</button>
+      <button mat-button (click)="toggleRegisterForm()" *ngIf="u==null">Register</button>
+      <button mat-button *ngIf="u!=null" style="width: 120px;">@{{u?.username}}</button>
+      <button mat-button (click)="logoutUser()" *ngIf="u!=null">Log Out</button>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="login" *ngIf="showLogin" >
+
+  <form [formGroup]="LogInForm" (ngSubmit)="loginUser()">
+
+    <div class="form-title">
+      <h1>Log In:</h1>
+      <h1 style="cursor: pointer;"><a (click)="toggleLoginForm()"><mat-icon>cancel</mat-icon></a></h1>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+      <mat-error>Must be between 5 and 20 characters.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error>Must be at least 8 characters.</mat-error>
+    </mat-form-field>
+
+    <button mat-button type="submit" id="form-btn">Log In</button>
+
+  </form>
+  
+  <button mat-button id="reg-btn" (click)="toggleLoginForm(); toggleRegisterForm()">Don't have an account? | Register</button>
+
+</div>
+
+<div class="register" *ngIf="showRegister">
+
+  <form [formGroup]="RegisterForm" (ngSubmit)="createUser()">
+
+    <div class="form-title">
+      <h1>Registration:</h1>
+      <h1 style="cursor: pointer;"><a (click)="toggleRegisterForm()"><mat-icon>cancel</mat-icon></a></h1>
+    </div>
+
+    <div id="names">
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="usernameReg">
+      <mat-error>Must be between 5 and 20 characters.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="passwordReg">
+      <mat-error>Must be at least 8 characters.</mat-error>
+    </mat-form-field>
+
+    <button mat-button type="submit" id="form-btn">Register</button>
+
+  </form>
+  
+  <button mat-button id="reg-btn" (click)="toggleRegisterForm();toggleLoginForm()">Already a user? | Log In</button>
+
+</div>

@@ -1,0 +1,36 @@
+
+.banner{
+  font-family: 'Radio Canada', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eff8fd;
+  width: 100%;
+}
+
+#banner-text{
+  display: flex;
+  flex-direction: row;
+}
+
+#banner-text p{
+  text-align: center;
+  color: #022027;
+  margin: auto;
+  padding: 15px;
+  font-family: 'Archivo', sans-serif;
+}
+
+#banner-text p a, #banner-text p a:visited{
+  color: #075e74;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button {
+  color: #022027;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}

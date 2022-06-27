@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-form-field class="chip-list" >
+    <mat-label>Insert categories</mat-label>
+    <mat-chip-list #chipList aria-label="Category selection">
+      <mat-chip *ngFor="let category of categories" (removed)="remove(category)">
+        {{category.name}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input placeholder="New category..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)"
+             (keyup.enter)="submit();">
+             
+    </mat-chip-list>
+  </mat-form-field>
+</div>

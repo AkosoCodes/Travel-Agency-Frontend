@@ -1,0 +1,154 @@
+.wrapper{
+    margin-top: 60px;
+  }
+
+  #title{
+    background-color: #022027;
+    width: 100%;
+    margin: 0;
+  
+    position: relative;
+  }
+  
+  #title h1{
+    text-align: center;
+    padding: 30px 0;
+    margin: auto 0;
+    font-size: 60px;
+    font-family: Rubik;
+    font-weight: bold;
+    color: #eff8fd;
+  
+  }
+
+  
+
+  
+  app-main-banner{
+    position: relative;
+  }
+  
+  #empty-space{
+    z-index: 99999;
+    height: 700px;
+    width: 100%;
+    background-color: red;
+  }
+  #top{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+  }
+  
+
+
+
+
+
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+}
+.image{
+    position: fixed;
+    z-index: -1;
+    top: 68px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.80;
+}
+
+
+.info{
+
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    margin: auto 0;
+    background-color: rgba(255, 255, 255, 0.903);
+    border: #022027 solid 5px;
+    box-shadow: #07566a -5px 5px;
+    z-index: 3;
+  }
+  
+  .info form{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    padding-bottom: 0;
+  }
+  
+  .form-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .form-title h1{
+    margin: 20px 0 0 10px;
+    color: #097c9a;
+    font-size: 40px;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .info form mat-form-field{
+    margin: 5px 0;
+  }
+  
+  #names{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #names mat-form-field{
+    width: 265px;
+  }
+  
+  
+  #form-btn{
+    background-color: #097c9a;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: 550px){
+    .wrapper{
+      margin-top: 99px;
+    }
+  }
+  
+  @media screen and (max-width: 775px){
+
+    .image{
+        top: 98px;
+    }
+      .image img{
+        
+        object-fit:fill;
+        width: 800px;
+        height: 600px;
+        
+      }
+    }
+
+@media screen and (max-width: 900px){
+    .image img{
+        height: 600px;
+        }
+
+    }
