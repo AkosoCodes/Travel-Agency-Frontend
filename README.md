@@ -4,7 +4,7 @@
 
 ## 📝 | Table of Contents
 - [🧐 Project Task <a name="project_task"></a>](#--project-task-)
-- [📸 Media <a name="demo"></a>](#--media-)
+- [📸 Media & Demo <a name="demo"></a>](#--media-)
 - [🧰 Languages & Tools <a name="languages_&_tools"></a>](#--languages--tools-)
 - [🏁 Getting Started <a name="getting_started"></a>](#--getting-started-)
 - [⚖ License <a name="license"></a>](#--license-)
@@ -19,7 +19,7 @@ The Frontend part of the project should be done in Angular, and should include t
   <br>**3-** Each destination should include: heading, description, image(s) and ratings.
   <br>**4-** Admin panel (CRUD operations).
 
-## 📸 | Media <a name="demo"></a>
+## 📸 | Media & Demo <a name="demo"></a>
 
 <h3>Home:</h3>
 Includes an interactive particle background.<br><br>
