@@ -64,7 +64,7 @@ These instructions will get you a copy of the project up and running on your loc
 **<h3>Requirements:</h3>**
 <ul>
 <li>Web Browser</li>
-<li>Backend API</li>
+<li>[Backend API](https://github.com/AkosoCodes/backend)</li>
 </ul>
 
 **<h3>Guide:</h3>**
