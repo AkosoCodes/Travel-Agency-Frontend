@@ -11,7 +11,7 @@
 
 ## 🧐 | Project Task <a name="project_task"></a>
 
-Create a fully functioning "Travel Agency" web application.
+**TASK: Create a Full Stack "Travel Agency" web application.**
 
 The Frontend part of the project should be done in Angular, and should include the following:
   <br>**1-** Welcome web page (information about the websiteand preview).
